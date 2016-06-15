@@ -14,6 +14,7 @@ namespace ConsoleApplication1
             long timestamp = 1465702102000;
             string localTime =  ConvertToLocalTime(timestamp);
             Console.WriteLine(localTime);
+            Console.WriteLine();
         }
         
         public static string ConvertToLocalTime(long timestamp)
