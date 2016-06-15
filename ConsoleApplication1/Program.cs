@@ -15,6 +15,8 @@ namespace ConsoleApplication1
             string localTime =  ConvertToLocalTime(timestamp);
             Console.WriteLine(localTime);
             Console.WriteLine();
+            DateTime now = new DateTime();
+            Console.WriteLine(LocalTimeToTimestamp(now));
         }
         
         public static string ConvertToLocalTime(long timestamp)
@@ -25,6 +27,13 @@ namespace ConsoleApplication1
             var localTime = localZone.ToLocalTime(time);
 
             return localTime.ToString();
+        }
+
+        public static long LocalTimeToTimestamp(DateTime localTime)
+        {
+            localTime = DateTime.Now;
+            long milliseconds = (long)(localTime - new DateTime(1970, 1, 1)).TotalMilliseconds;
+            return milliseconds;
         }
     }
 }
